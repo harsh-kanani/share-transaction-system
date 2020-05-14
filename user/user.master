@@ -1,0 +1,293 @@
+﻿<%@ Master Language="VB" CodeFile="user.master.vb" Inherits="user_user" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+<title>Share World</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- font-awesome icons -->
+<link rel="stylesheet" href="css/font-awesome.min.css" />
+<!-- //font-awesome icons -->
+<!-- js -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.marquee.min.js"></script>
+<!-- //js -->
+<link href="//fonts.googleapis.com/css?family=Muli:300,300i,400,400i" rel="stylesheet">
+
+
+<link href="../user/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        $(".scroll").click(function (event) {
+            event.preventDefault();
+            $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+        });
+    });
+</script>
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="revel/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="../validation.js" type="text/javascript"></script>
+
+  <!-- Libraries CSS Files -->
+  <link href="revel/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" >
+  <link href="revel/lib/animate/animate.min.css" rel="stylesheet">
+  <link href="revel/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="revel/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="revel/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+  <link href="revel/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="revel/css/style.css" rel="stylesheet">
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="background-image:"../background.jpg">
+<form id="form1" runat="server">
+<section id="topbar" class="d-none d-lg-block">
+    <div class="container clearfix">
+      <div class="contact-info float-left">
+        <i class="fa fa-envelope-o"></i> <a href="mailto:contact@example.com">shareworld1924@gmail.com</a>
+        <i class="fa fa-phone"></i> +919889554855
+      </div>
+      <div class="social-links float-right">
+        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+        <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+        <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+        
+             
+         <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        <i class="fa fa-envelope fa-fw"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-messages">
+                        <li>
+                            <a href="#">
+                              
+                                     <asp:Repeater ID="reptmsg" runat="server">
+                                            <ItemTemplate>
+                                              <table>
+                                           
+                                    <tr ><td><asp:Label ID="lbldetail" runat="server" Text='<%# eval("message") %>' Font-Size="X-Large"></asp:Label></td>
+                                    
+                                          
+                                       <td ><asp:Label ID="Label1" runat="server" Text='<%# eval("msgdate") %>' ></asp:Label></td>
+                                       </tr>
+                                            </table>
+                                            </ItemTemplate>
+                                            </asp:Repeater>   
+                                             <%--<li class="divider"></li>--%>
+                                   
+                            </a>
+
+                        </li>
+                        
+                        </ul>
+                        </li>
+                        </ul>
+
+      
+      </div>
+    
+      </div>
+   
+  </section>
+
+  <!--==========================
+    Header
+  ============================-->
+  <header id="header">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <h1><a href="userhome.aspx" class="scrollto">Share<span>World</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+       
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="userhome.apsx">Home</a></li>
+          
+          <li><a href="transfer.aspx">Money Transfer</a></li>
+          <li class="menu-has-children"><a href="">Share</a>
+            <ul>
+              <li><a href="ShowShare.aspx">Buy Share</a></li>
+              <li><a href="usershare.aspx">Sell Share</a></li>
+            </ul>
+          </li>
+          <li class="menu-has-children"><a href="">Transaction</a>
+            <ul>
+              <li><a href="Sharetransaction.aspx">Share Transaction</a></li>
+              <li><a href="moneytransaction.aspx">Money Transaction</a></li>
+            </ul>
+          </li>
+          <li class="menu-has-children"><a href="">comunication</a>
+            <ul>
+              <li><a href="question.aspx">Question</a></li>
+              <li><a href="inquiry.aspx">Inquiry</a></li>
+              <li><a href="feedback.aspx">Feedback</a></li>
+              
+            </ul>
+          </li>
+          <li><a href="#contact">ContactUs</a></li>
+          <li class="menu-has-children"><asp:Label ID="lbluname" runat="server" Text=""></asp:Label><a href=""><i class="fa fa-user"></i></a>
+            <ul>
+              <li><a href="userprofile.aspx"><i class="fa fa-user" style="margin-right:10px"></i>Profile</a></li>
+              <li><a href="changepwd.aspx"><i class="fa fa-pencil" style="margin-right:10px"></i>Change Password</a></li>
+              
+              <li><asp:LinkButton ID="LinkButton1" runat="server">Logout</asp:LinkButton></li>
+             
+            </ul>
+          </li>
+
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- #header -->
+	<!-- end header -->
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        
+          <asp:ContentPlaceHolder id="ContentPlaceHolder2" runat="server">
+        
+        </asp:ContentPlaceHolder>
+  
+
+    <!-- footer -->
+	<div class="footer">
+		<div class="container">
+			<ul class="agileits_w3layouts_footer_info">
+				<li><a href="userhome.aspx">Home</a><i>|</i></li>
+				<li><a href="showshare.aspx">Buy Sharre</a><i>|</i></li>
+				<li><a href="usershare.aspx">Shell Share</a><i>|</i></li>
+				<li><a href="about.html">About Us</a><i>|</i></li>
+
+			</ul>
+			<p>© 2018 Share world. All rights reserved | Design by Share World</p>
+		</div>
+	</div>
+ </form>
+<!-- //footer -->
+
+<!-- JavaScript Libraries -->
+  <script src="revel/lib/jquery/jquery.min.js"></script>
+  <script src="revel/lib/jquery/jquery-migrate.min.js"></script>
+  <script src="revel/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="revel/lib/easing/easing.min.js"></script>
+  <script src="revel/lib/superfish/hoverIntent.js"></script>
+  <script src="revel/lib/superfish/superfish.min.js"></script>
+  <script src="revel/lib/wow/wow.min.js"></script>
+  <script src="revel/lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="revel/lib/magnific-popup/magnific-popup.min.js"></script>
+  <script src="revel/lib/sticky/sticky.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8HeI8o-c1NppZA-92oYlXakhDPYR7XMY"></script>
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="revel/js/main.js"></script>
+
+    <!-- javascript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<!-- script for marque -->
+<!-- stacked-graph -->
+	<script type="text/javascript" src="js/raphael.js"></script>
+    <script type="text/javascript" src="js/jquery.enumerable.js"></script>
+    <script type="text/javascript" src="js/jquery.tufte-graph.js"></script>
+	 <script type="text/javascript">
+	     $(document).ready(function () {
+
+	         jQuery('#stacked-graph').tufteBar({
+	             data: [
+            [[1.5, 1.0, 0.51], { label: '2013'}],
+            [[2.0, 1.03, 0.6], { label: '2014'}],
+            [[2.4, 0.9, 2.0], { label: '2015'}],
+            [[1.5, 2.6, 0.45], { label: '2016'}]
+          ],
+	             barLabel: function (index) {
+	                 amount = ($(this[0]).sum() * 10000).toFixed(0);
+	                 return '$' + $.tufteBar.formatNumber(amount);
+	             },
+	             axisLabel: function (index) { return this[1].label },
+	             legend: {
+	                 data: ["Finance", "Metal", "Telecom"]
+	             }
+	         });
+	     });
+    </script>
+<!-- //stacked-graph -->
+<!-- script for marque -->
+	<script>
+	    $('.marquee').marquee({
+	        gap: 100,
+	        delayBeforeStart: 0,
+	        direction: 'left',
+	        duplicated: true,
+	        pauseOnHover: true
+	    });
+	</script>
+	
+<!-- //script for marque -->
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".dropdown").hover(
+        function () {
+            $('.dropdown-menu', this).stop(true, true).slideDown("fast");
+            $(this).toggleClass('open');
+        },
+        function () {
+            $('.dropdown-menu', this).stop(true, true).slideUp("fast");
+            $(this).toggleClass('open');
+        }
+    );
+    });
+</script>
+<!-- //Bootstrap Core JavaScript -->
+<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+	    $(document).ready(function () {
+	        /*
+	        var defaults = {
+	        containerID: 'toTop', // fading element id
+	        containerHoverID: 'toTopHover', // fading element hover id
+	        scrollSpeed: 1200,
+	        easingType: 'linear' 
+	        };
+	        */
+
+	        $().UItoTop({ easingType: 'easeOutQuart' });
+
+	    });
+	</script>
+<!-- //here ends scrolling icon -->
+
+<script src="../user/dataTables/jquery.dataTables.js"></script>
+    <script src="../user/dataTables/dataTables.bootstrap.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#dataTables-example').dataTable();
+            });
+    </script>
+
+     
+</body>
+</html>
